@@ -1,23 +1,43 @@
 ﻿using System;
 using System.Collections.Generic;
-using System.Linq;
 using System.Text;
-using System.Threading.Tasks;
-
 namespace Asayuki.Common
 {
     [AttributeUsage(AttributeTargets.Property)]
     class DataArr : System.Attribute
     {
-        private bool _flag;
-        public DataArr()
+        private string _name;
+        private int _width=100;
+        private int _priority = 1;
+        public DataArr(string name)
         {
-            _flag = true;
+            _name = name;
         }
-        public bool flag
+        public DataArr(string name,int width)
         {
-            get{return _flag;}
-            set{_flag = value;}
+            _name = name;
+            _width = width;
+        }
+        public DataArr(string name,int width,int priority)
+        {
+            _name = name;
+            _width = width;
+            _priority = priority;
+        }
+        public string name
+        {
+            get{ return _name;}
+            set{ _name = value;}
+        }
+        public int width
+        {
+            get { return _width; }
+            set { _width = value; }
+        }
+        public int priority
+        {
+            get { return _priority; }
+            set { _priority = value; }
         }
     }
 }
